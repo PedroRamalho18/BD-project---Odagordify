@@ -1,0 +1,405 @@
+{
+	"info": {
+		"_postman_id": "94b5f7ba-0eab-4f67-96cd-be79de319bef",
+		"name": "Odagordify",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "27451279",
+		"_collection_link": "https://galactic-astronaut-868768.postman.co/workspace/My-Workspace~4ab63392-9fa9-43b1-8122-4479c51b6443/collection/27451279-94b5f7ba-0eab-4f67-96cd-be79de319bef?action=share&creator=27451279&source=collection_link"
+	},
+	"item": [
+		{
+			"name": "User Authentication",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"user_name\": \"Bernardo\",\"password\":\"password\"}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/bdprojeto/user/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"bdprojeto",
+						"user",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User Registration",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTY4Njk1MjI5NywianRpIjoiMDEwNmVjYWUtN2E0OC00YjUxLTllNGUtMmQ1OTViY2YxYWMxIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6eyJ1c2VyX3R5cGUiOiJhZG1pbiIsInVzZXJfaWQiOjN9LCJuYmYiOjE2ODY5NTIyOTcsImV4cCI6MTY4Njk1MzE5N30.JJDs2rXiL-oppvr2HV8pYwF286DXCwsGgrTvLw5Ovu4",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"user_name\": \"Ambrosio\",\r\n    \"email\": \"Ambrosio@gmail.com\",\r\n    \"password\": \"password\"\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/bdprojeto/user/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"bdprojeto",
+						"user",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "add_song",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTY4Njk1MjQ3OSwianRpIjoiNGY0ZmM0NzMtNjgxMS00OTZiLTg4YTYtMGVhMTRhYTgyOWFmIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6eyJ1c2VyX3R5cGUiOiJhcnRpc3QiLCJ1c2VyX2lkIjo0fSwibmJmIjoxNjg2OTUyNDc5LCJleHAiOjE2ODY5NTMzNzl9.TraolG9V7GqkdiJEeVk4FzcNLXIfUtChCRBX9rWidKA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"song_name\": \"Contentores\",\r\n    \"genre\": \"Rock\",\r\n    \"duration\": \"5\",\r\n    \"other_artists\":[4],\r\n    \"release_date\": \"2001-10-10\",\r\n     \"publisher\":\"Xutos\"\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/bdprojeto/song/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"bdprojeto",
+						"song",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "search song",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTY4Njk1MjcwMywianRpIjoiMzBjYjI2MzctMDI3Ny00OTMzLWE1YmMtOWE3MTJlZDU2OWM4IiwidHlwZSI6ImFjY2VzcyIsInN1YiI6eyJ1c2VyX3R5cGUiOiJhcnRpc3QiLCJ1c2VyX2lkIjo0fSwibmJmIjoxNjg2OTUyNzAzLCJleHAiOjE2ODY5NTM2MDN9.6M5Rt-HZpJWQHm7EkAsDnA1REXa5tO3IwNKnzaAoLTw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/bdprojeto/song/4",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"bdprojeto",
+						"song",
+						"4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "detail_artist",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTY4Njk1NDE2OSwianRpIjoiOTU5YzQ5N2QtZjNjMC00MWJkLTg3Y2ItMzE2YmFmZTQ4NzVkIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6eyJ1c2VyX3R5cGUiOiJhcnRpc3QiLCJ1c2VyX2lkIjo0fSwibmJmIjoxNjg2OTU0MTY5LCJleHAiOjE2ODY5NTUwNjl9.ysBxrOshlRXw4K84uQSRMkja94m3GyB_3CVHC-RXzss",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/bdprojeto/artist_info/4",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"bdprojeto",
+						"artist_info",
+						"4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "add_album",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTY4Njk1MjU5MywianRpIjoiNjIxMmQwMmEtNDIzMC00YjQ2LWE3ZGYtNDEyMjY2MzEzOTFkIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6eyJ1c2VyX3R5cGUiOiJhcnRpc3QiLCJ1c2VyX2lkIjo0fSwibmJmIjoxNjg2OTUyNTkzLCJleHAiOjE2ODY5NTM0OTN9.aAncxkIgZOZU3JmW54LeL2bAVXeHAG6twgziQRATUMg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"album_name\": \"Odagorda\",\r\n    \"release_date\": \"2023-5-20\",\r\n    \"songs\": [5,{\"song_name\": \"Adeus\",\"genre\": \"pimba\",\"duration\": \"3\",\"release_date\": \"2001-10-10\",\"other_artists\": [4]}]\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/bdprojeto/album",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"bdprojeto",
+						"album"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "generate_prepaid_cards",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTY4Njk1MjgzOCwianRpIjoiNmMwMGVjZjgtOTRhZS00MTk3LWE3YjEtMDY5NmY2Mjk0MGRjIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6eyJ1c2VyX3R5cGUiOiJhZG1pbiIsInVzZXJfaWQiOjN9LCJuYmYiOjE2ODY5NTI4MzgsImV4cCI6MTY4Njk1MzczOH0.2NDSf-abl8eqbYtGxkOLq7_JYGP2g7VyzOuLV6YOUZU",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n     \"card_price\": \"50\"\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/bdprojeto/card",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"bdprojeto",
+						"card"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "leave_comment",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTY4NjkxNjcwMSwianRpIjoiMmIyNjQwM2ItYmUzMy00ZWU0LTljYjEtOGExNWZiNmQ2ZTZmIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6eyJ1c2VyX3R5cGUiOiJyZWd1bGFyIiwidXNlcl9pZCI6N30sIm5iZiI6MTY4NjkxNjcwMSwiZXhwIjoxNjg2OTE3NjAxfQ.o5w7iFRzDk9cWjGsj2xgWnqY68rBn7X3sSjMbp0JIak",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"comment\": \"This song is amazing!\"\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/dbproj2/comments/11/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"dbproj2",
+						"comments",
+						"11",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "subscribe_to_premium",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTY4Njk0NzQwMiwianRpIjoiMmUxZDEzMTAtNTgxNy00ZWU3LTgyYzAtZmIwNzcwZDVhMzZlIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6eyJ1c2VyX3R5cGUiOiJyZWd1bGFyIiwidXNlcl9pZCI6Mn0sIm5iZiI6MTY4Njk0NzQwMiwiZXhwIjoxNjg2OTQ4MzAyfQ.Iwvt-ZU8FneLyLa_xAYSoZs5yNRrpDhHgn64cGhMz9Y",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"period\": \"semester\", \r\n    \"cards\": [3,2,1]\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/bdprojeto/subscription",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"bdprojeto",
+						"subscription"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create_playlist",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTY4Njk0ODMzOSwianRpIjoiNDhjNWFmMjAtODk3Mi00MGI1LWEwMGQtZWFhZWNmZGJkOWM5IiwidHlwZSI6ImFjY2VzcyIsInN1YiI6eyJ1c2VyX3R5cGUiOiJwcmVtaXVtIiwidXNlcl9pZCI6NX0sIm5iZiI6MTY4Njk0ODMzOSwiZXhwIjoxNjg2OTQ5MjM5fQ.vIs_7UjGidZ38AHgGcDUg8TzBRCymPhZL1KCxzWCO9s",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"playlist_name\": \"mix\",\r\n     \"visibility\": \"public\",\r\n      \"songs\": [5,4]\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/bdprojeto/playlist",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"bdprojeto",
+						"playlist"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
